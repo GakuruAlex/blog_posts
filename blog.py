@@ -12,11 +12,11 @@ def get_blogs():
 
 @app.route("/blogs")
 def blogs():
-    my_blogs= get_blogs()
+    my_blogs = get_blogs()
     return render_template(template_name_or_list="all_blogs.html", blogs=my_blogs)
 
 
-@app.route("/blogs/<int: id>")
+@app.route("/blogs/<int:pk>")
 def blog(pk):
     my_blog = get_blogs()[pk]
     return render_template(template_name_or_list="blog.html", blog=my_blog)
