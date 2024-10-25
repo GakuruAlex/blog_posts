@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% block styles %}
+<link rel="stylesheet" href="{{url_for('static', filename='blog.css')}}">
+{% endblock %}
+{% block title %}{{blog.id}}{% endblock %}
+
+{% block body %}
+<div class="blog">
+<h2>{{blog.title}}</h2>
+<h3>{{blog.subtitle}}</h3>
+<p>{{blog.body}}</p>
+    <a href="{{url_for('blogs')}}">All Blogs</a>
+</div>
+{% endblock %}

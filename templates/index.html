@@ -3,17 +3,19 @@
 <head>
     {% block head %}
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="static/index.css">
-    <title> {% block title %} {% endblock %} </title>
+    <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
+    {% block styles %}{% endblock %}
+    <title>{% block title %} {% endblock %}</title>
     {% endblock %}
 </head>
 <body id="content">
-{% block body %}
 <nav id="top-nav">
     <h1 id="blog-text">
         My Blog
     </h1>
 </nav>
+{% block body %}
+
 {% endblock %}
 
 <footer id="footer"></footer>

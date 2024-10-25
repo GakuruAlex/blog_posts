@@ -1,16 +1,20 @@
 {% extends 'index.html' %}
 
 {% block title %} All Blogs{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{{url_for('static', filename='blogs.css')}}">
+{% endblock %}
 {% block body %}
 {% if blogs %}
+<div class="all_cards">
 {% for blog in blogs %}
-    <div class="blog">
-        <h2>{{blog["title"]}}</h2>
+    <div class="blogs">
+        <h3>{{blog["title"]}}</h3>
         <h4>{{blog["subtitle"]}}</h4>
-        <a href="{{url_for('blog', id=blog.id ) }}">View More</a>
+        <a href="{{url_for('blog', pk=blog.id ) }}">View More</a>
     </div>
 {% endfor %}
-
+</div>
 {% else %}
 <p>No blogs</p>
 {% endif %}
